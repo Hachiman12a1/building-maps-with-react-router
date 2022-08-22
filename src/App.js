@@ -1,9 +1,9 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from "react-router-dom";
 
-import MainHeader from './components/MainHeader';
-import ProductDetail from './pages/ProductDetail';
-import Products from './pages/Products';
-import Welcome from './pages/Welcome';
+import MainHeader from "./components/MainHeader";
+import ProductDetail from "./pages/ProductDetail";
+import Products from "./pages/Products";
+import Welcome from "./pages/Welcome";
 
 function App() {
   return (
@@ -11,9 +11,10 @@ function App() {
       <MainHeader />
       <main>
         <Routes>
-          <Route path='/welcome/*' element={<Welcome />} />
-          <Route path='/products' element={<Products />} exact/>
-          <Route path='/products/:productId' element={<ProductDetail />} />
+          <Route path="/" element={<Navigate to="/welcome" replace />} />
+          <Route path="/welcome/*" element={<Welcome />} />
+          <Route path="/products" element={<Products />} exact />
+          <Route path="/products/:productId" element={<ProductDetail />} />
         </Routes>
       </main>
     </div>
