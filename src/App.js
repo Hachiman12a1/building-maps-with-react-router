@@ -11,7 +11,7 @@ function App() {
       <MainHeader />
       <main>
         <Routes>
-          <Route path='/welcome' element={<Welcome />} />
+          <Route path='/welcome/*' element={<Welcome />} />
           <Route path='/products' element={<Products />} exact/>
           <Route path='/products/:productId' element={<ProductDetail />} />
         </Routes>
