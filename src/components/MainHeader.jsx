@@ -1,23 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import classes from "./MainHeader.module.css";
 
-MainHeader.propTypes = {
-    
-};
+MainHeader.propTypes = {};
 
 function MainHeader(props) {
-    return (
-        <header>
-            <ul>
-                <li>
-                    <Link to='/welcome'>Welcome</Link>
-                </li>
-                <li>
-                    <Link to='/products'>Products</Link>
-                </li>
-            </ul>
-        </header>
-    );
+  return (
+    <header className={classes.header}>
+      <nav>
+        <ul>
+          <li>
+            <NavLink
+              to="/welcome"
+              className={(navData) => (navData.isActive ? classes.active : "")}
+            >
+              Welcome
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/products"
+              className={(navData) => (navData.isActive ? classes.active : "")}
+            >
+              Products
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
 export default MainHeader;
